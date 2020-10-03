@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>즐길 수 없으면 피해라</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-container {
+            margin: 0;
+            height: 50px;
+            width: 100%;
+            padding: 0;
+            background-color: #474747;
+        }
+        
+        .nav-title {
+            color: white;
+            margin-top: 15px;
+            float: left;
+            margin-left: 20px;
+            display: flex;
+        }
+        
+        .nav-list {
+            float: right;
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            margin-right: 5px;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .nav-item {
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+        }
+        
+        .nav-item a {
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .content-container {
+            text-align: center;
+            padding: 5px;
+        }
+        
+        .content-container .title {
+            color: #1f1f1f;
+            font-size: 30px;
+        }
+        
+        .content-container .content {
+            color: #383838;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        
+        .sub_news,
+        .sub_news th,
+        .sub_news td {
+            border: 0;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        
+        .sub_news a {
+            color: #383838;
+            text-decoration: none;
+        }
+        
+        .sub_news {
+            width: 100%;
+            border-bottom: 1px solid #999;
+            color: #666;
+            font-size: 12px;
+            table-layout: fixed;
+        }
+        
+        .sub_news caption {
+            display: none;
+        }
+        
+        .sub_news th {
+            padding: 5px 0 6px;
+            border-top: solid 1px #999;
+            border-bottom: solid 1px #b2b2b2;
+            background-color: #f1f1f4;
+            color: #333;
+            font-weight: bold;
+            line-height: 20px;
+            vertical-align: top;
+        }
+        
+        .sub_news td {
+            padding: 8px 0 9px;
+            border-bottom: solid 1px #d2d2d2;
+            text-align: center;
+            line-height: 18px;
+        }
+        
+        .sub_news .date,
+        .sub_news .hit {
+            padding: 0;
+            font-family: Tahoma;
+            font-size: 11px;
+            line-height: normal;
+        }
+        
+        .sub_news .title {
+            text-align: left;
+            padding-left: 15px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-title">
+                <a href="20181512-v1.html">즐길 수 없으면 <strong>&nbsp피해라</strong></a
+          >
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="notice.html">
+              공지사항
+            </a>
+                </li>
+                <li class="nav-item">
+                    <a href="covid-dashboard.html">
+              코로나 현황
+            </a>
+                </li>
+                <li class="nav-item">
+                    <a href="travel-road.html">여행 계획</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html">로그인</a>
+                </li>
+                </ul>
+            </div>
+    </nav>
+
+    <div class="content-container" style="margin-top: 20px;">
+        <div class="title">
+            공지사항
+        </div>
+
+        <div class="content">
+            <table class="sub_news" cellspacing="0" summary="게시판 제목 리스트">
+                <caption>
+                    게시판 리스트
+                </caption>
+                <colgroup>
+                    <col />
+                    <col width="110" />
+                    <col width="100" />
+                    <col width="80" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">제목</th>
+                        <th scope="col">글쓴이</th>
+                        <th scope="col">날짜</th>
+                        <th scope="col">조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="title">
+                            <a href="#">서비스 오픈 안내</a>
+                        </td>
+                        <td class="name">관리자</td>
+                        <td class="date">2020/10/12</td>
+                        <td class="hit">362</td>
+                    </tr>
+                    <tr>
+                        <td class="title">
+                            <a href="#">긴급 점검 안내</a>
+                        </td>
+                        <td class="name">관리자</td>
+                        <td class="date">2020/10/09</td>
+                        <td class="hit">142</td>
+                    </tr>
+                    <tr>
+                        <td class="title">
+                            <a href="#">긴급 점검 안내</a>
+                        </td>
+                        <td class="name">관리자</td>
+                        <td class="date">2020/10/09</td>
+                        <td class="hit">142</td>
+                    </tr>
+                    <tr>
+                        <td class="title">
+                            <a href="#">긴급 점검 안내</a>
+                        </td>
+                        <td class="name">관리자</td>
+                        <td class="date">2020/10/09</td>
+                        <td class="hit">142</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
