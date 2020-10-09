@@ -99,6 +99,7 @@
         
         .card-container {
             margin-top: 40px;
+            margin-bottom: 40px;
             display: inline-block;
             background: white;
         }
@@ -110,6 +111,10 @@
             box-shadow: 0 5px 20px gray;
             width: 250px;
             height: 250px;
+        }
+        
+        .card .card-content {
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -157,10 +162,30 @@
 
         <div class="title"><strong>코로나19 현황</strong></div>
         <section class="card-container">
-            <div id="card-confirmed" class="card"></div>
-            <div id="card-ongoing" class="card"></div>
-            <div id="card-release" class="card"></div>
-            <div id="card-dead" class="card"></div>
+            <div id="card-confirmed" class="card">
+                <div class="card-content">
+                    <div id="category">확진 환자</div>
+                    <h2 id="sum">13,634명</h2>
+                </div>
+            </div>
+            <div id="card-ongoing" class="card">
+                <div class="card-content">
+                    <div id="category">검사 중</div>
+                    <h2 id="sum">13,634명</h2>
+                </div>
+            </div>
+            <div id="card-release" class="card">
+                <div class="card-content">
+                    <div id="category">격리 해제</div>
+                    <h2 id="sum">13,634명</h2>
+                </div>
+            </div>
+            <div id="card-dead" class="card">
+                <div class="card-content">
+                    <div id="category">사망자</div>
+                    <h2 id="sum">13,634명</h2>
+                </div>
+            </div>
         </section>
     </div>
 </body>
