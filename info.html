@@ -86,8 +86,8 @@
         }
         
         .content-container {
-            text-align: center;
             padding: 5px;
+            margin-left: 100px;
         }
         
         .content-container .title {
@@ -180,7 +180,7 @@
     <div class="banner-container">
         <div class="banner-content">
             <div id="title">
-                <strong>안전하고 간편하게<br />힐링 여행 </strong>떠나기
+                <strong>서비스 소개</strong><br />Service Introduce
             </div>
 
             <div id="logo">즐길수 <br />없으면<br /><strong>피해라</strong></div>
@@ -197,45 +197,53 @@
             하지만 국민들의 단합으로 이제는 점차 나아지고 있는 상황입니다.<br /> 사회적 거리두기만 실천한다면, 마음 한 켠에 묵혀놨던 여행 계획을 꺼내도 좋습니다.
         </div>
 
-        <div class="title"><strong>코로나19 현황</strong></div>
-        <section class="card-container">
-            <div id="card-confirmed" class="card">
-                <div class="card-content">
-                    <div id="category">확진 환자</div>
-                    <h2 id="sum">13,634명</h2>
-                </div>
-            </div>
-            <div id="card-ongoing" class="card">
-                <div class="card-content">
-                    <div id="category">검사 중</div>
-                    <h2 id="sum">42,527명</h2>
-                </div>
-            </div>
-            <div id="card-release" class="card">
-                <div class="card-content">
-                    <div id="category">격리 해제</div>
-                    <h2 id="sum">23,631명</h2>
-                </div>
-            </div>
-            <div id="card-dead" class="card">
-                <div class="card-content">
-                    <div id="category">사망자</div>
-                    <h2 id="sum">136명</h2>
-                </div>
-            </div>
-        </section>
-        <div class="title"><strong>서비스 소개</strong></div>
+        <div class="title"><strong>개발자 소개</strong></div>
         <div class="content">
-            아무리 상황이 진정되었다 해도, 국민들이 서로서로 조심해야 할 상황인 만큼 여행도 안전하게 다녀와야 합니다.<br /> '즐길 수 없으면 피해라' 사이트는 여러분들의 안전한 나들이, 여행 계획을 세움에 있어 큰 도움을 줄 것 입니다.
+            해당 사이트는 순천향대학교의 3학년 과정 '고급 웹 프로그래밍' 과목의 Term Project로 제작되었습니다.<br /> HTML, CSS, JavaScript 등을 사용했습니다. WAS 구현이 없기 때문에 로그인, 공지사항 등의 기능은 정적으로 동작합니다.
+        </div>
+        <p><br /></p>
+        <div class="content">
+            <strong>김현준 (H43RO)</strong><br /><br />순천향대학교 사물인터넷학과 3학년을 재학 중입니다.<br />아무래도 프레임워크 없는 웹 프론트 엔드 개발은
+            <strong>잘 안 맞는 것 같습니다.</strong>
         </div>
 
         <div class="content">
-            조심만 하면 언제든 지금까지의 스트레스를 날려버릴 아름다운 추억을 만들 수 있습니다.<br /> '즐길 수 없으면 피해라'와 함께 안전한 여행을 떠나보세요!
-        </div>
-        <br />
-        <br />
-        <a class="content" style="font-weight: bold;" href="info.html">
-            자세히 알아보기
+            <p>
+                <span ng-if="showField('facebookURL')" style="box-sizing: border-box;"><a
+              href="https://www.facebook.com/profile.php?id=100003985802298"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="box-sizing: border-box; background-color: transparent; color: rgb(51, 122, 183); text-decoration: none;"
+              ><img
+                width="26"
+                ng-src="https://codetwocdn.azureedge.net/images/mail-signatures/generator-dm/help-fight-covid19-3/fb.png"
+                alt="facebook icon"
+                src="https://codetwocdn.azureedge.net/images/mail-signatures/generator-dm/help-fight-covid19-3/fb.png"
+                style="box-sizing: border-box; border: 0px; vertical-align: middle; height: 35px; width: 26px;"/></a
+            >&nbsp;</span
+          >&nbsp;<img
+            width="26"
+            ng-src="https://codetwocdn.azureedge.net/images/mail-signatures/generator-dm/help-fight-covid19-3/it.png"
+            alt="instagram icon"
+            src="https://codetwocdn.azureedge.net/images/mail-signatures/generator-dm/help-fight-covid19-3/it.png"
+            style="box-sizing: border-box; border: 0px; vertical-align: middle; height: 35px; width: 26px;"
+          />&nbsp;&nbsp;<span
+            ng-if="showField('linkedinURL')"
+            style="box-sizing: border-box;"
+            ><a
+              href="https://www.linkedin.com/in/h43ro/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="box-sizing: border-box; background-color: transparent; color: rgb(51, 122, 183); text-decoration: none;"
+              ><img
+                width="26"
+                ng-src="https://codetwocdn.azureedge.net/images/mail-signatures/generator-dm/help-fight-covid19-3/ln.png"
+                alt="linkedin icon"
+                src="https://codetwocdn.azureedge.net/images/mail-signatures/generator-dm/help-fight-covid19-3/ln.png"
+                style="box-sizing: border-box; border: 0px; vertical-align: middle; height: 35px; width: 26px;"/></a
+          ></span>
+            </p>
+            <p><br /></p>
         </div>
     </div>
 </body>
