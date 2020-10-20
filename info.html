@@ -145,6 +145,10 @@
         .card-container #sum {
             font-size: 40px;
         }
+        
+        .link {
+            color: darkblue;
+        }
     </style>
 </head>
 
@@ -203,13 +207,33 @@
         </div>
         <p><br /></p>
         <div class="content">
-            <strong>김현준 (H43RO)</strong><br /><br />순천향대학교 사물인터넷학과 3학년을 재학 중입니다.<br />아무래도 프레임워크 없는 웹 프론트 엔드 개발은
-            <strong>잘 안 맞는 것 같습니다.</strong>
+            <strong>김현준 (H43RO)</strong><br /><br />순천향대학교 사물인터넷학과 3학년을 재학 중입니다.<br /> 보유한 기술 스택은 다음과 같습니다.
         </div>
-
         <div class="content">
-            <p>
-                <span ng-if="showField('facebookURL')" style="box-sizing: border-box;"><a
+            <ul>
+                <li>C, C++ 을 활용한 <strong>임베디드 시스템 개발</strong></li>
+                <li>Java, Kotlin 을 활용한 <strong>안드로이드 앱 개발</strong></li>
+                <li>Python 을 활용한 <strong>백 엔드 개발 (Django)</strong></li>
+            </ul>
+        </div>
+        <div class="content">
+            이 외에도 HTML/CSS/JS, Swift 를 활용한 iOS 앱 개발 등을 간단하게 할 줄 압니다.
+            <br /> 주력 기술은 <strong>안드로이드 앱 개발</strong>이며, 다양한 외주 및 사이드 프로젝트를 진행한 바 있으며 <br />개인적으로 2개의 앱을 런칭한 경험이 있습니다. (<a class="link" href="https://play.google.com/store/apps/details?id=dongbaek.hs.kr.dbapp">'동백고 모바일'</a
+        >,
+        <a
+          class="link"
+          href="https://play.google.com/store/apps/details?id=com.haerokim.hate_alcohol"
+          >'나는 술찌다'</a
+        >
+        등)<br /><br />
+        RxKoltin, RxAndroid 를 활용한 Reactive Programming 에 관심을 보이고
+        있으며, <br />JetPack Component 을 활용하여 트렌디하게 앱을 개발하는
+        것을 목표로 합니다.
+      </div>
+      <div class="content">
+        <p>
+          <span ng-if="showField('facebookURL')" style="box-sizing: border-box;"
+            ><a
               href="https://www.facebook.com/profile.php?id=100003985802298"
               target="_blank"
               rel="noopener noreferrer"
@@ -242,10 +266,9 @@
                 src="https://codetwocdn.azureedge.net/images/mail-signatures/generator-dm/help-fight-covid19-3/ln.png"
                 style="box-sizing: border-box; border: 0px; vertical-align: middle; height: 35px; width: 26px;"/></a
           ></span>
-            </p>
-            <p><br /></p>
-        </div>
+        </p>
+        <p><br /></p>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
