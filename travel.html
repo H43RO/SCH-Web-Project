@@ -386,6 +386,10 @@
                         infowindow.close();
                     });
 
+                    kakao.maps.event.addListener(marker, "click", function() {
+                        alertInfoWindow(marker, title);
+                    });
+
                     itemEl.onmouseover = function() {
                         displayInfowindow(marker, title);
                     };
@@ -517,6 +521,12 @@
             while (el.hasChildNodes()) {
                 el.removeChild(el.lastChild);
             }
+        }
+
+        function alertInfoWindow(marker, title) {
+            var content = title;
+
+            alert(title);
         }
     </script>
 </body>
