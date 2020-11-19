@@ -91,7 +91,7 @@
             border-radius: 20px;
             margin: 0 auto;
             margin-top: 8px;
-            padding: 0;
+            padding-left: 20px;
             width: 300px;
             height: 40px;
         }
@@ -100,7 +100,6 @@
             cursor: pointer;
             border-radius: 20px;
             margin: 0 auto;
-            padding: 0;
             color: white;
             text-align: center;
             margin-top: 20px;
@@ -114,6 +113,23 @@
             vertical-align: middle;
         }
     </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.login-button').click(function() {
+                var idField = document.getElementById("id").value
+                var pwField = document.getElementById("pw").value
+
+                if (idField.length == 0 || pwField.length == 0) {
+                    alert("아이디 및 비밀번호를 입력해주세요")
+                } else {
+                    alert("환영합니다!")
+                    document.location.href = "index.html";
+                }
+            })
+        })
+    </script>
 </head>
 
 <body>
@@ -146,7 +162,7 @@
     <div class="login-container">
         <div class="login-title">즐길수<br />없으면<br />피해라</div>
         <input class="login-input" id="id"></input><br>
-        <input class="login-input" id="pw"></input>
+        <input type="password" class="login-input" id="pw"></input>
         <div class="login-button">
             <div class="login-text">
                 로그인
