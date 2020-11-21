@@ -98,6 +98,21 @@
             border-radius: 10px;
         }
         
+        #travel_wrap {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 400px;
+            margin: 60px 10px 30px 10px;
+            padding: 5px;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 1;
+            font-size: 12px;
+            border-radius: 10px;
+        }
+        
         .bg_white {
             background: #fff;
         }
@@ -232,6 +247,34 @@
             background-position: 0 -654px;
         }
         
+        #travelRoutineList li {
+            list-style: none;
+        }
+        
+        #travelRoutineList .item {
+            position: relative;
+            border-bottom: 1px solid #888;
+            overflow: hidden;
+            cursor: pointer;
+            min-height: 65px;
+        }
+        
+        #travelRoutineList .item span {
+            display: block;
+            margin-top: 4px;
+        }
+        
+        #travelRoutineList .item h5,
+        #travelRoutineList .item .info {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        #travelRoutineList .item .info {
+            padding: 10px 0 10px 55px;
+        }
+        
         #pagination {
             margin: 10px auto;
             text-align: center;
@@ -295,7 +338,7 @@
         <div id="pagination"></div>
     </div>
 
-    <div id="travel__routine_wrap">
+    <div id="travel_wrap">
         <ul id="travelRoutineList"></ul>
     </div>
 
@@ -357,7 +400,6 @@
         // 검색 결과 목록과 마커를 표출하는 함수입니다
         function displayPlaces(places) {
             var listEl = document.getElementById("placesList"),
-                travelRoutineEl = document.getElementById("travelRoutineList"),
                 menuEl = document.getElementById("menu_wrap"),
                 fragment = document.createDocumentFragment(),
                 bounds = new kakao.maps.LatLngBounds(),
@@ -382,6 +424,7 @@
                 // 마커와 검색결과 항목에 mouseover 했을때
                 // 해당 장소에 인포윈도우에 장소명을 표시합니다
                 // mouseout 했을 때는 인포윈도우를 닫습니다
+                // 클릭했을 땐 해당 장소를 여행 루틴에 포함합니다.
                 (function(marker, title) {
                     kakao.maps.event.addListener(marker, "mouseover", function() {
                         displayInfowindow(marker, title);
@@ -392,8 +435,8 @@
                     });
 
                     kakao.maps.event.addListener(marker, "click", function() {
-                        // TODO
-                        getTravelRoutineItem(places[i]);
+                        console.log("list_clickListener");
+                        addTravelRoutine(fragment, itemEl);
                     });
 
                     itemEl.onmouseover = function() {
@@ -416,6 +459,13 @@
             map.setBounds(bounds);
         }
 
+        function addTravelRoutine(fragment, itemEl) {
+            var travelRoutineEl = document.getElementById("travelRoutineList");
+
+            fragment.appendChild(itemEl);
+            travelRoutineEl.appendChild(fragment);
+        }
+
         // 검색결과 항목을 Element로 반환하는 함수입니다
         function getListItem(index, places) {
             var el = document.createElement("li"),
@@ -429,13 +479,7 @@
                 "</h5>";
 
             if (places.road_address_name) {
-                itemStr +=
-                    "    <span>" +
-                    places.road_address_name +
-                    "</span>" +
-                    '   <span class="jibun gray">' +
-                    places.address_name +
-                    "</span>";
+                itemStr += "    <span>" + places.road_address_name + "</span>";
             } else {
                 itemStr += "    <span>" + places.address_name + "</span>";
             }
@@ -477,28 +521,13 @@
         function getTravelRoutineItem(places) {
             var el = document.createElement("li"),
                 itemStr =
-                '<span class="markerbg marker_' +
-                (index + 1) +
-                '"></span>' +
-                '<div class="info">' +
-                "   <h5>" +
-                places.place_name +
-                "</h5>";
+                '<div class="info">' + "   <h5>" + places.place_name + "</h5>";
 
             if (places.road_address_name) {
-                itemStr +=
-                    "    <span>" +
-                    places.road_address_name +
-                    "</span>" +
-                    '   <span class="jibun gray">' +
-                    places.address_name +
-                    "</span>";
+                itemStr += "    <span>" + places.road_address_name + "</span>";
             } else {
                 itemStr += "    <span>" + places.address_name + "</span>";
             }
-
-            itemStr += '  <span class="tel">' + places.phone + "</span>" + "</div>";
-
             el.innerHTML = itemStr;
             el.className = "item";
 
