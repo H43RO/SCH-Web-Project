@@ -111,6 +111,7 @@
             z-index: 1;
             font-size: 12px;
             border-radius: 10px;
+            background: none;
         }
         
         .bg_white {
@@ -253,10 +254,11 @@
         
         #travelRoutineList .item {
             position: relative;
-            border-bottom: 1px solid #888;
             overflow: hidden;
             cursor: pointer;
             min-height: 65px;
+            background: white;
+            margin-bottom: 8px;
         }
         
         #travelRoutineList .item span {
@@ -415,7 +417,6 @@
                 // 마커를 생성하고 지도에 표시합니다
                 var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
                     marker = addMarker(placePosition, i),
-                    travelItemEl = getTravelRoutineItem(places[i]),
                     itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
 
                 // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
@@ -426,8 +427,7 @@
                 // 해당 장소에 인포윈도우에 장소명을 표시합니다
                 // mouseout 했을 때는 인포윈도우를 닫습니다
                 // 클릭했을 땐 해당 장소를 여행 루틴에 포함합니다.
-                (function(marker, title, address_name) {
-                    console.log(title);
+                (function(marker, title, place) {
                     kakao.maps.event.addListener(marker, "mouseover", function() {
                         displayInfowindow(marker, title);
                     });
@@ -437,18 +437,21 @@
                     });
 
                     kakao.maps.event.addListener(marker, "click", function() {
-                        console.log("list_clickListener");
-                        addTravelRoutine(fragment, travelItemEl);
+                        addTravelRoutine(fragment, place);
                     });
 
                     itemEl.onmouseover = function() {
                         displayInfowindow(marker, title);
                     };
 
+                    itemEl.onclick = function() {
+                        addTravelRoutine(fragment, place);
+                    }
+
                     itemEl.onmouseout = function() {
                         infowindow.close();
                     };
-                })(marker, places[i].place_name);
+                })(marker, places[i].place_name, places[i]);
 
                 fragment.appendChild(itemEl);
             }
@@ -461,10 +464,11 @@
             map.setBounds(bounds);
         }
 
-        function addTravelRoutine(fragment, itemEl) {
+        function addTravelRoutine(fragment, place) {
             var travelRoutineEl = document.getElementById("travelRoutineList");
 
-            fragment.appendChild(itemEl);
+            travelItemEl = getTravelRoutineItem(place);
+            fragment.appendChild(travelItemEl);
             travelRoutineEl.appendChild(fragment);
         }
 
@@ -580,6 +584,7 @@
         function displayInfowindow(marker, title) {
             var content = '<div style="padding:5px;z-index:1;">' + title + "</div>";
 
+            console.log("asdfadfsdfasdf");
             infowindow.setContent(content);
             infowindow.open(map, marker);
         }
@@ -599,4 +604,4 @@
     </script>
 </body>
 
-</html>
+</html
