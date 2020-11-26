@@ -348,7 +348,7 @@
     </div>
 
     <div id="travel_wrap">
-        <button>비우기</button><br>
+        <button id="clearButton">비우기</button><br>
         <ul id="travelRoutineList"></ul>
     </div>
 
@@ -415,6 +415,8 @@
                 bounds = new kakao.maps.LatLngBounds(),
                 listStr = "";
 
+            var clearButton = document.getElementById("clearButton");
+
             // 검색 결과 목록에 추가된 항목들을 제거합니다
             removeAllChildNods(listEl);
 
@@ -459,6 +461,10 @@
                     itemEl.onmouseout = function() {
                         infowindow.close();
                     };
+
+                    clearButton.onclick = function() {
+                        removeAllTravelRoutine();
+                    }
                 })(marker, places[i].place_name, places[i]);
 
                 fragment.appendChild(itemEl);
@@ -546,6 +552,15 @@
             el.className = "item";
 
             return el;
+        }
+
+        // 여행지 목록 비우기 버튼을 눌렀을 때 호출되는 함수입니다
+        function removeAllTravelRoutine() {
+            var travelRoutineEl = document.getElementById("travelRoutineList");
+
+            while (travelRoutineEl.hasChildNodes()) {
+                travelRoutineEl.removeChild(travelRoutineEl.firstChild)
+            }
         }
 
         // 지도 위에 표시되고 있는 마커를 모두 제거합니다
