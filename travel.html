@@ -430,6 +430,7 @@
             // 지도에 표시되고 있는 마커를 제거합니다
             removeMarker();
 
+
             for (var i = 0; i < places.length; i++) {
                 // 마커를 생성하고 지도에 표시합니다
                 var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
@@ -487,14 +488,14 @@
 
         function addTravelRoutine(fragment, place) {
             var travelRoutineEl = document.getElementById("travelRoutineList");
-            var removeButton = document.getElementById("removeButton")
 
             travelItemEl = getTravelRoutineItem(place);
             fragment.appendChild(travelItemEl);
             travelRoutineEl.appendChild(fragment);
 
-            removeButton.onclick = function() {
-                removeTravelRoutine();
+            var index = travelRoutineEl.getElementsByTagName("li").length - 1;
+            travelItemEl.onclick = function() {
+                removeTravelRoutine(index);
             }
         }
 
@@ -567,17 +568,20 @@
         }
 
         // 특정 여행지의 삭제 버튼을 눌렀을 때 호출되는 함수입니다
-        function removeTravelRoutine() {
-            alert('지우기 버튼')
+        function removeTravelRoutine(index) {
+            console.log(index)
         }
 
         // 여행지 목록 비우기 버튼을 눌렀을 때 호출되는 함수입니다
         function removeAllTravelRoutine() {
             var travelRoutineEl = document.getElementById("travelRoutineList");
-
-            while (travelRoutineEl.hasChildNodes()) {
-                travelRoutineEl.removeChild(travelRoutineEl.firstChild)
+            var userConfirm = confirm("정말 목록을 비우시겠습니까?");
+            if (userConfirm) {
+                while (travelRoutineEl.hasChildNodes()) {
+                    travelRoutineEl.removeChild(travelRoutineEl.firstChild)
+                }
             }
+
         }
 
         // 지도 위에 표시되고 있는 마커를 모두 제거합니다
