@@ -569,7 +569,9 @@
 
         // 특정 여행지의 삭제 버튼을 눌렀을 때 호출되는 함수입니다
         function removeTravelRoutine(index) {
-            console.log(index)
+            var travelRoutineEl = document.getElementById("travelRoutineList");
+            travelRoutineEl.removeChild(travelRoutineEl.children[index]);
+            console.log(index);
         }
 
         // 여행지 목록 비우기 버튼을 눌렀을 때 호출되는 함수입니다
@@ -577,11 +579,8 @@
             var travelRoutineEl = document.getElementById("travelRoutineList");
             var userConfirm = confirm("정말 목록을 비우시겠습니까?");
             if (userConfirm) {
-                while (travelRoutineEl.hasChildNodes()) {
-                    travelRoutineEl.removeChild(travelRoutineEl.firstChild)
-                }
+                travelRoutineEl.remove();
             }
-
         }
 
         // 지도 위에 표시되고 있는 마커를 모두 제거합니다
