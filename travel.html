@@ -493,9 +493,9 @@
             fragment.appendChild(travelItemEl);
             travelRoutineEl.appendChild(fragment);
 
-            var index = travelRoutineEl.getElementsByTagName("li").length - 1;
+            var node = travelItemEl
             travelItemEl.onclick = function() {
-                removeTravelRoutine(index);
+                removeTravelRoutine(node);
             }
         }
 
@@ -568,10 +568,10 @@
         }
 
         // 특정 여행지의 삭제 버튼을 눌렀을 때 호출되는 함수입니다
-        function removeTravelRoutine(index) {
+        function removeTravelRoutine(node) {
             var travelRoutineEl = document.getElementById("travelRoutineList");
-            travelRoutineEl.removeChild(travelRoutineEl.children[index]);
-            console.log(index);
+            travelRoutineEl.removeChild(node);
+            console.log(node);
         }
 
         // 여행지 목록 비우기 버튼을 눌렀을 때 호출되는 함수입니다
