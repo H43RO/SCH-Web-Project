@@ -494,10 +494,8 @@
             travelRoutineEl.appendChild(fragment);
 
             var node = travelItemEl
-            var removeButton = travelItemEl.getElementsByTagName('div')
-
-            removeButton.onclick = function() {
-                removeTravelRoutine(travelItemEl);
+            travelItemEl.onclick = function() {
+                removeTravelRoutine(node);
             }
         }
 
@@ -584,7 +582,6 @@
                 while (travelRoutineEl.firstChild) {
                     travelRoutineEl.removeChild(travelRoutineEl.firstChild);
                 }
-
             }
         }
 
