@@ -128,15 +128,35 @@
         }
         
         #menu_wrap .option {
-            text-align: center;
+            margin: 20px 10px 0px 10px;
         }
         
-        #menu_wrap .option p {
-            margin: 10px 0;
+        #menu_wrap .option #keyword {
+            border-radius: 30px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: gray;
+            outline: none;
+            padding-left: 20px;
+            height: 30px;
         }
         
         #menu_wrap .option button {
+            border-radius: 30px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: gray;
+            padding: 0 20px 0 20px;
             margin-left: 5px;
+            height: 36px;
+        }
+        
+        #placesList {
+            padding: 0 10px 10px 10px;
+        }
+        
+        #placesList ul {
+            padding: 0px;
         }
         
         #placesList li {
@@ -185,7 +205,7 @@
             position: absolute;
             width: 36px;
             height: 37px;
-            margin: 10px 0 0 10px;
+            margin: 20px 0 0 10px;
             background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;
         }
         
@@ -343,8 +363,7 @@
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
-                    키워드 :
-                    <input type="text" value="신촌 맛집" id="keyword" size="15" />
+                    <input type="text" value="신촌 맛집" id="keyword" size="28" />
                     <button type="submit">검색하기</button>
                 </form>
             </div>
@@ -354,7 +373,7 @@
     </div>
 
     <div id="travel_wrap">
-        <button id="clearButton">비우기</button><br>
+        <button id="clearButton">비우기</button><br />
         <ul id="travelRoutineList"></ul>
     </div>
 
@@ -421,7 +440,6 @@
                 bounds = new kakao.maps.LatLngBounds(),
                 listStr = "";
 
-
             var clearButton = document.getElementById("clearButton");
 
             // 검색 결과 목록에 추가된 항목들을 제거합니다
@@ -429,7 +447,6 @@
 
             // 지도에 표시되고 있는 마커를 제거합니다
             removeMarker();
-
 
             for (var i = 0; i < places.length; i++) {
                 // 마커를 생성하고 지도에 표시합니다
@@ -464,7 +481,7 @@
 
                     itemEl.onclick = function() {
                         addTravelRoutine(fragment, place);
-                    }
+                    };
 
                     itemEl.onmouseout = function() {
                         infowindow.close();
@@ -472,7 +489,7 @@
 
                     clearButton.onclick = function() {
                         removeAllTravelRoutine();
-                    }
+                    };
                 })(marker, places[i].place_name, places[i]);
 
                 fragment.appendChild(itemEl);
@@ -493,10 +510,10 @@
             fragment.appendChild(travelItemEl);
             travelRoutineEl.appendChild(fragment);
 
-            var node = travelItemEl
+            var node = travelItemEl;
             travelItemEl.onclick = function() {
                 removeTravelRoutine(node);
-            }
+            };
         }
 
         // 검색결과 항목을 Element로 반환하는 함수입니다
@@ -553,10 +570,9 @@
 
         function getTravelRoutineItem(places) {
             var el = document.createElement("li"),
-                itemStr =
-                '<div class="info">' + "<h3>" + places.place_name + "</h3>";
+                itemStr = '<div class="info">' + "<h3>" + places.place_name + "</h3>";
 
-            itemStr += '<div id="removeButton" class="remove">지우기</div>'
+            itemStr += '<div id="removeButton" class="remove">지우기</div>';
             if (places.road_address_name) {
                 itemStr += "    <span>" + places.road_address_name + "</span>";
             } else {
@@ -571,7 +587,6 @@
         function removeTravelRoutine(node) {
             var travelRoutineEl = document.getElementById("travelRoutineList");
             travelRoutineEl.removeChild(node);
-            console.log(node);
         }
 
         // 여행지 목록 비우기 버튼을 눌렀을 때 호출되는 함수입니다
@@ -648,4 +663,4 @@
     </script>
 </body>
 
-</html position: relative;
+</html>
