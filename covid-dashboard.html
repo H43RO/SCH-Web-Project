@@ -86,14 +86,20 @@
         }
         
         .content-container {
-            text-align: center;
             padding: 5px;
         }
         
         .content-container .title {
             color: #1f1f1f;
             margin-top: 60px;
-            font-size: 30px;
+            font-size: 25px;
+        }
+        
+        .content-container .title strong {
+            color: #1f1f1f;
+            margin-top: 60px;
+            margin-left: 260px;
+            font-size: 35px;
         }
         
         .content-container .content {
@@ -109,6 +115,10 @@
             background: white;
         }
         
+        .card-root {
+            text-align: center;
+        }
+        
         .card {
             float: left;
             margin-left: 30px;
@@ -118,12 +128,16 @@
             height: 250px;
         }
         
-        .card .card-content {
-            margin-top: 70px;
+        .card-container #category {
+            margin-top: 75px;
+            font-size: 25px;
+            color: #383838;
+            font-weight: bold;
         }
         
-        .card-container #category {
-            font-size: 20px;
+        .card-container #sum {
+            margin-top: 20px;
+            font-size: 40px;
         }
         
         .card-container #card-confirmed #sum {
@@ -142,14 +156,15 @@
             color: #454545;
         }
         
-        .card-container #sum {
-            font-size: 40px;
-        }
+        #card-info {}
         
         #card-feed,
         #card-graph {
             width: 630px;
             height: 300px;
+            width: 630px;
+            height: 300px;
+            text-align: left;
         }
     </style>
 </head>
@@ -182,42 +197,48 @@
     </nav>
 
     <div class="content-container">
-        <div class="title"><strong>코로나 바이러스 현황</strong></div>
-        <section class="card-container">
-            <div id="card-confirmed" class="card">
-                <div class="card-content">
-                    <div id="category">확진 환자</div>
-                    <h2 id="sum">13,634명</h2>
+        <div class="title">
+            <strong>코로나 바이러스 현황 </strong> 국내 COVID-19 사태의 실시간 현황을 보여줍니다
+        </div>
+        <div class="card-root">
+            <section class="card-container">
+                <div id="card-confirmed" class="card">
+                    <div class="card-content">
+                        <div id="category">확진 환자</div>
+                        <h2 id="sum">13,634명</h2>
+                    </div>
                 </div>
-            </div>
-            <div id="card-ongoing" class="card">
-                <div class="card-content">
-                    <div id="category">검사 중</div>
-                    <h2 id="sum">42,527명</h2>
+                <div id="card-ongoing" class="card">
+                    <div class="card-content">
+                        <div id="category">검사 중</div>
+                        <h2 id="sum">42,527명</h2>
+                    </div>
                 </div>
-            </div>
-            <div id="card-release" class="card">
-                <div class="card-content">
-                    <div id="category">격리 해제</div>
-                    <h2 id="sum">23,631명</h2>
+                <div id="card-release" class="card">
+                    <div class="card-content">
+                        <div id="category">격리 해제</div>
+                        <h2 id="sum">23,631명</h2>
+                    </div>
                 </div>
-            </div>
-            <div id="card-dead" class="card">
-                <div class="card-content">
-                    <div id="category">사망자</div>
-                    <h2 id="sum">136명</h2>
+                <div id="card-dead" class="card">
+                    <div class="card-content">
+                        <div id="category">사망자</div>
+                        <h2 id="sum">136명</h2>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="card-container">
-            <div id="card-graph" class="card">
-                <div class="card-content"></div>
-            </div>
-            <div id="card-feed" class="card">
-                <div class="card-content"></div>
-            </div>
-        </section>
+            <section class="card-container" id="card-info">
+                <div id="card-graph" class="card">
+                    <div class="card-content"></div>
+                </div>
+                <div id="card-feed" class="card">
+                    <div class="card-content">
+                        asdf
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 </body>
 
