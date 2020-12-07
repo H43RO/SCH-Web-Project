@@ -98,7 +98,7 @@
         .content-container .title strong {
             color: #1f1f1f;
             margin-top: 60px;
-            margin-left: 260px;
+            margin-left: 320px;
             font-size: 35px;
         }
         
@@ -156,8 +156,6 @@
             color: #454545;
         }
         
-        #card-info {}
-        
         #card-feed,
         #card-graph {
             width: 630px;
@@ -165,6 +163,16 @@
             width: 630px;
             height: 300px;
             text-align: left;
+        }
+        
+        #card-feed #category {
+            margin: 45px 0 20px 40px;
+        }
+        
+        #card-feed #feed {
+            color: #454545;
+            margin: 20px 0 0 40px;
+            font-size: 20px;
         }
     </style>
 </head>
@@ -228,13 +236,19 @@
                 </div>
             </section>
 
-            <section class="card-container" id="card-info">
+            <section class="card-container">
                 <div id="card-graph" class="card">
                     <div class="card-content"></div>
                 </div>
                 <div id="card-feed" class="card">
                     <div class="card-content">
-                        asdf
+                        <div id="category">실시간 확진자 현황</div>
+                        <div id="feed">경북 경주 85번 (용강동, 여, 50대) 확진자 발생</div>
+                        <div id="feed">경기 화성 133번 (병점동) 확진자 발생</div>
+                        <div id="feed">
+                            충북 청주 71, 72번 (포항 확진자 접촉) 확진자 발생
+                        </div>
+                        <div id="feed">서울 동작구 218번 확진자 발생</div>
                     </div>
                 </div>
             </section>
