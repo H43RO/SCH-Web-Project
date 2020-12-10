@@ -89,6 +89,9 @@
         
         .login-input {
             border-radius: 20px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: white;
             margin: 0 auto;
             margin-top: 8px;
             padding-left: 20px;
@@ -99,15 +102,20 @@
         .login-button {
             cursor: pointer;
             border-radius: 20px;
-            margin: 0 auto;
-            color: white;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #474747;
+            width: 320px;
+            height: 40px;
             text-align: center;
+            color: white;
+            margin: 0 auto;
             margin-top: 20px;
             background-color: #474747;
         }
         
         .login-text {
-            width: 300px;
+            width: 320px;
             height: 40px;
             display: table-cell;
             vertical-align: middle;
@@ -161,8 +169,8 @@
     </nav>
     <div class="login-container">
         <div class="login-title">즐길수<br />없으면<br />피해라</div>
-        <input class="login-input" id="id"></input><br>
-        <input type="password" class="login-input" id="pw"></input>
+        <input class="login-input" placeholder="아이디를 입력해주세요" id="id"></input><br>
+        <input type="password" class="login-input" id="pw" placeholder="비밀번호를 입력해주세요"></input>
         <div class="login-button">
             <div class="login-text">
                 로그인
