@@ -71,14 +71,14 @@
             color: white;
         }
         
-        .login-container {
+        .register-container {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
         
-        .login-title {
+        .register-title {
             text-align: center;
             margin: 0 auto;
             margin-bottom: 30px;
@@ -87,7 +87,7 @@
             font-weight: bold;
         }
         
-        .login-input {
+        .register-input {
             border-radius: 20px;
             border-width: 2px;
             border-style: solid;
@@ -99,7 +99,7 @@
             height: 40px;
         }
         
-        .login-button {
+        .register-button {
             cursor: pointer;
             border-radius: 20px;
             border-width: 2px;
@@ -114,7 +114,7 @@
             background-color: #474747;
         }
         
-        .login-text {
+        .register-text {
             width: 320px;
             height: 40px;
             display: table-cell;
@@ -125,15 +125,22 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script>
         $(document).ready(function() {
-            $('.login-text').click(function() {
+            $('.register-text').click(function() {
                 var idField = document.getElementById("id").value
                 var pwField = document.getElementById("pw").value
+                var nicknameField = document.getElementById("nickname").value
+                var pwConfirmField = document.getElementById("pwConfirm").value
 
-                if (idField.length == 0 || pwField.length == 0) {
-                    alert("아이디 및 비밀번호를 입력해주세요")
+                if (nicknameField.length == 0 || idField.length == 0 ||
+                    pwField.length == 0 || pwConfirmField.length == 0) {
+                    alert("입력 폼을 모두 입력해주세요")
                 } else {
-                    alert("환영합니다!")
-                    document.location.href = "index.html";
+                    if (pwField == pwConfirmField) {
+                        alert("환영합니다!")
+                        document.location.href = "login.html";
+                    } else {
+                        alert("패스워드가 일치하지 않습니다")
+                    }
                 }
             })
         })
@@ -167,15 +174,16 @@
             </ul>
         </div>
     </nav>
-    <div class="login-container">
-        <div class="login-title">즐길수<br />없으면<br />피해라</div>
-        <input class="login-input" placeholder="아이디를 입력해주세요" id="id"></input><br>
-        <input type="password" class="login-input" id="pw" placeholder="비밀번호를 입력해주세요"></input>
-        <div class="login-button">
-            <div class="login-text">
-                로그인
+    <div class="register-container">
+        <div class="register-title">즐길수<br />없으면<br />피해라</div>
+        <input class="register-input" placeholder="닉네임을 입력해주세요" id="nickname"></input><br>
+        <input class="register-input" placeholder="아이디를 입력해주세요" id="id"></input><br>
+        <input type="password" class="register-input" id="pw" placeholder="비밀번호를 입력해주세요"></input><br>
+        <input type="password" class="register-input" id="pwConfirm" placeholder="비밀번호를 한 번 더 입력해주세요"></input>
+        <div class="register-button">
+            <div class="register-text">
+                회원가입
             </div>
-            <br> <a href="register.html">아직 회원이 아니신가요?</a>
         </div>
     </div>
 </body>
